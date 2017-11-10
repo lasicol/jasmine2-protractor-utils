@@ -55,9 +55,9 @@ protractorUtil.takeScreenshotOnExpectFail = function (context) {
                     // take screenshot
                     global.browser.takeScreenshot().then(function (png) {
 
-                        var fileName = (configName ? configName : "") + (config.capabilities.browserName + '-' + self.result.fullName + '-' + 'expect failure-' + protractorUtil.index++).replace(/[\/\\]:/g, ' ');
+                        var fileName = (configName ? configName : "") + (config.capabilities.browserName + '-' + self.result.fullName + '-' + 'expect failure-' + protractorUtil.index++).replace(/[\/\\\:]/g, ' ');
                         if (fileName.length > 245) {
-                            fileName = ((configName ? configName : "") + (config.capabilities.browserName + '-' + self.result.fullName).replace(/[\/\\]:/g, ' ')).substring(0, 230) + '-' + 'expect failure-' + protractorUtil.index++;
+                            fileName = ((configName ? configName : "") + (config.capabilities.browserName + '-' + self.result.fullName).replace(/[\/\\\:]/g, ' ')).substring(0, 230) + '-' + 'expect failure-' + protractorUtil.index++;
                         }
 
                         if (context.config.screenshotPath) {
@@ -101,9 +101,9 @@ protractorUtil.takeScreenshotOnSpecFail = function (context) {
                         if (result.failedExpectations.length > 0) {
                             // take screenshot
                             browser.takeScreenshot().then(function (png) {
-                                var fileName = (configName ? configName : "") + (config.capabilities.browserName + '-' + result.fullName).replace(/[\/\\]:/g, ' ');
+                                var fileName = (configName ? configName : "") + (config.capabilities.browserName + '-' + result.fullName).replace(/[\/\\\:]/g, ' ');
                                 if (fileName.length > 245) {
-                                    fileName = ((configName ? configName : "") + (config.capabilities.browserName + '-' + result.fullName).replace(/[\/\\]:/g, ' ')).substring(0, 230);
+                                    fileName = ((configName ? configName : "") + (config.capabilities.browserName + '-' + result.fullName).replace(/[\/\\\:]/g, ' ')).substring(0, 230);
                                 }
 
                                 if (context.config.screenshotPath) {
